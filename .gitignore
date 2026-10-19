@@ -1,0 +1,11 @@
+# Python environment and tool caches
+.venv
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+
+# downloads, caches and derived data: rebuilt by the scripts in data/ and model/
+out/
+
+# The built app data (terrain, imagery, 2-D flood frames) is committed, so the app runs from a clone.

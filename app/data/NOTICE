@@ -1,0 +1,14 @@
+The data in this folder is not covered by the MIT licence of the code.
+
+- Terrain (rasuwa/terrain, sections; the hydraulic tables in model/data): produced using Copernicus WorldDEM-30 (c) DLR e.V. 2010-2014
+  and (c) Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights
+  reserved. The organisations in charge of the Copernicus programme by law or by delegation do not incur any
+  liability for any use of the Copernicus WorldDEM-30.
+- Imagery and vegetation loss (rasuwa/imagery, rasuwa/layers/change): contains modified Copernicus Sentinel data
+  2025-2026.
+- Buildings, bridges, roads and facilities (rasuwa/layers/osm.json, buildings.bin): (c) OpenStreetMap contributors,
+  available under the Open Database Licence (ODbL), https://www.openstreetmap.org/copyright.
+- Reported facts (rasuwa/facts.json, layers/events.json): restated from the agencies and papers named with each
+  fact; see research/events.md.
+
+Model results (model.json, model_rise.bin, layers/flood2d) are derived from the terrain above and keep its notice.

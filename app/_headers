@@ -1,0 +1,14 @@
+# Cache rules for Cloudflare Pages (https://developers.cloudflare.com/pages/configuration/headers/).
+# Pages, scripts and styles are checked with the server on every visit, so a new version shows at once.
+# Data files carry the data version in their URL (?v=DATA_V in src/decode.mjs), so they can be kept for a year:
+# a new version has a new URL.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/src/*
+  Cache-Control: public, max-age=0, must-revalidate
+/styles.css
+  Cache-Control: public, max-age=0, must-revalidate
+/data/*
+  Cache-Control: public, max-age=31536000, immutable

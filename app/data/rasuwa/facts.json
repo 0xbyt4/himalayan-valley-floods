@@ -1,0 +1,411 @@
+{
+  "note": "Facts shown in the app, restated in our own words from research/events.md (Parts B and E), with the grade and sources given there. Times are Nepal time (NPT) on 26 August 2026 unless stated.",
+  "sources": {
+    "usgs": {
+      "label": "USGS event us7000tbwb (landslide signal, Ms 5.2)",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tbwb/executive",
+      "short": "USGS"
+    },
+    "usgs2": {
+      "label": "USGS event us7000tc90 (second landslide signal)",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tc90/executive",
+      "short": "USGS"
+    },
+    "clash": {
+      "label": "CLaSH, August 2026 Nepal Trishuli Flood (StoryMap, 23 Sep 2026)",
+      "url": "https://storymaps.arcgis.com/stories/f2b2425eac544929a7d18f4c90b41d66",
+      "short": "CLaSH"
+    },
+    "icimod": {
+      "label": "ICIMOD, Understanding the Gyirong-Rasuwa disaster: a preliminary synthesis (Oct 2026), CC BY-NC-ND, facts restated only",
+      "url": "https://lib.icimod.org/records/qdvc1-tc123",
+      "short": "ICIMOD"
+    },
+    "ndrrma": {
+      "label": "NDRRMA, Bhotekoshi-Trishuli Flood Update, 26 Aug - 3 Oct 2026",
+      "url": "https://ndrrma.gov.np/mediafiles/publications/Bhotekoshi-Trishuli_Flood_Update_From_August_26_2026_to_October_3_2026.pdf",
+      "short": "NDRRMA update"
+    },
+    "rdna": {
+      "label": "NDRRMA, Rapid Damage and Needs Assessment, Rasuwa-Bhotekoshi Flood 2026",
+      "url": "https://ndrrma.gov.np/mediafiles/publications/RDNA_2026_for_web_compressed.pdf",
+      "short": "NDRRMA RDNA"
+    },
+    "nepalnews": {
+      "label": "Nepal News, Timeline: how the Bhote Koshi flood unfolded (16 Sep 2026)",
+      "url": "https://english.nepalnews.com/s/long-reads/timeline-how-the-bhote-koshi-flood-unfolded-hour-by-hour-and-its-3-week-aftermath/",
+      "short": "Nepal News"
+    },
+    "model": {
+      "label": "This tool's model (research/methods.md 4.6): a water-only routing model checked against seven reported times and the Devghat peak flow",
+      "url": "",
+      "short": "this model"
+    },
+    "usgs_lhp": {
+      "label": "USGS Landslide Hazards Program, 2026 Nepal debris avalanche and flash flood",
+      "url": "https://www.usgs.gov/programs/landslide-hazards/science/2026-nepal-debris-avalanche-and-flash-flood",
+      "short": "USGS LHP"
+    },
+    "zhao": {
+      "label": "Zhao et al., Journal of Mountain Science (2026), doi:10.1007/s11629-026-1475-x",
+      "url": "https://jms.imde.ac.cn/en/article/doi/10.1007/s11629-026-1475-x",
+      "short": "Zhao et al."
+    },
+    "parajuli": {
+      "label": "Parajuli and Khatiwada, Rasuwa 2026 event analysis (DEM differencing)",
+      "url": "https://www.parajulinawaraj.com.np/HGR/events/rasuwa-2026/index.html",
+      "short": "Parajuli and Khatiwada"
+    },
+    "ktmpost": {
+      "label": "Kathmandu Post, What triggered the Rasuwa flood? (28 Aug 2026)",
+      "url": "https://kathmandupost.com/national/2026/08/28/what-triggered-the-rasuwa-flood-scientists-piece-together-a-complex-chain-of-events",
+      "short": "Kathmandu Post"
+    },
+    "geopera": {
+      "label": "D. Weedman (Geopera), Bhote Koshi Flood 2026: a reconstruction from open satellite data (sediment-depth figures retracted)",
+      "url": "https://geopera.com/blog/bhote-koshi-flood-2026-satellite-analysis",
+      "short": "Geopera"
+    },
+    "ems": {
+      "label": "Copernicus Emergency Management Service, Flood in Nepal (EMSR927)",
+      "url": "https://mapping.emergency.copernicus.eu/activations/EMSR927",
+      "short": "Copernicus EMS"
+    },
+    "osm": {
+      "label": "OpenStreetMap contributors (ODbL), via the Overpass API",
+      "url": "https://www.openstreetmap.org/copyright",
+      "short": "OpenStreetMap"
+    },
+    "s2": {
+      "label": "Copernicus Sentinel-2 L2A (Earth Search), our own analysis",
+      "url": "https://registry.opendata.aws/sentinel-2-l2a-cogs/",
+      "short": "Sentinel-2"
+    }
+  },
+  "events": [
+    {
+      "time": "08:37",
+      "text": "Ice-rock avalanche on the Nepali side of the border, into the Lhende Khola; seismic signal at 08:37:10",
+      "grade": "SOLID",
+      "src": [
+        "usgs",
+        "clash"
+      ]
+    },
+    {
+      "time": "08:50",
+      "km": 35.7,
+      "place": "Syabrubesi",
+      "text": "A river station stops at 08:50: Syabrubesi according to NDRRMA and the RDNA, Rasuwagadhi according to ICIMOD",
+      "grade": "DISPUTED",
+      "src": [
+        "ndrrma",
+        "rdna",
+        "icimod"
+      ]
+    },
+    {
+      "time": "09:20",
+      "km": 64.3,
+      "place": "Betrawati",
+      "text": "Betrawati station stops transmitting; last gauge reading 3.55 m (warning 4.1 m)",
+      "grade": "SOLID",
+      "src": [
+        "ndrrma"
+      ]
+    },
+    {
+      "time": "10:28",
+      "km": 97.1,
+      "place": "Galchhi gauge",
+      "text": "Flood reaches Galchhi",
+      "grade": "LIKELY",
+      "src": [
+        "ndrrma",
+        "clash"
+      ]
+    },
+    {
+      "time": "10:50",
+      "km": 97.1,
+      "place": "Galchhi gauge",
+      "text": "Peak at Galchhi, about +8.5 m (CLaSH); maximum stage about 8.9 m (ICIMOD)",
+      "grade": "LIKELY",
+      "src": [
+        "clash",
+        "icimod"
+      ]
+    },
+    {
+      "time": "11:26",
+      "km": 119.4,
+      "place": "Malekhu",
+      "text": "Phurke station near Malekhu above warning level",
+      "grade": "SOLID",
+      "src": [
+        "ndrrma",
+        "clash"
+      ]
+    },
+    {
+      "time": "11:43",
+      "km": 119.4,
+      "place": "Malekhu",
+      "text": "Phurke station above danger level, then swept away with its bridge",
+      "grade": "SOLID",
+      "src": [
+        "ndrrma",
+        "clash"
+      ]
+    },
+    {
+      "time": "11:45",
+      "text": "Second landslide signal; it dammed the Lhende Khola at the Chhochen confluence (the lake drained on 28 Aug)",
+      "grade": "LIKELY",
+      "src": [
+        "usgs2",
+        "icimod"
+      ]
+    },
+    {
+      "time": "13:00",
+      "km": 157.1,
+      "place": "Mugling",
+      "text": "Flood had passed Mugling",
+      "grade": "LIKELY",
+      "src": [
+        "rdna",
+        "icimod"
+      ]
+    },
+    {
+      "time": "16:00",
+      "km": 192.7,
+      "place": "Devghat",
+      "text": "Peak at Devghat: gauge reading 6.57 m, about 5,850 m3/s",
+      "grade": "SOLID",
+      "src": [
+        "ndrrma",
+        "rdna"
+      ]
+    }
+  ],
+  "places": {
+    "Collapse source (CLaSH)": [
+      {
+        "text": "A rock and ice mass failed on the Nepali side, on the north side of the Langtang Lirung massif, and fell into the Lhende Khola",
+        "grade": "SOLID",
+        "src": [
+          "usgs",
+          "clash",
+          "icimod"
+        ]
+      },
+      {
+        "text": "Height of the head scarp: 5,000 to 5,600 m in different reports; the peer-reviewed value is 5,120 m",
+        "grade": "DISPUTED",
+        "src": [
+          "zhao",
+          "icimod",
+          "ktmpost"
+        ]
+      },
+      {
+        "text": "Fall height into the valley: about 1,000 to 1,400 m in most reports (one news report says almost 4,000 m)",
+        "grade": "DISPUTED",
+        "src": [
+          "icimod",
+          "ndrrma",
+          "ktmpost"
+        ]
+      },
+      {
+        "text": "Volume: about 130 to 490 million m3 by method (DEM differencing about 150, seismic inversions 200 to 490); the newest synthesis uses 132",
+        "grade": "DISPUTED",
+        "src": [
+          "icimod",
+          "parajuli",
+          "clash"
+        ]
+      },
+      {
+        "text": "Whether a temporary dam held for hours before the flood is disputed; USGS, CLaSH, ICIMOD and NDRRMA describe the collapse as making the flood directly",
+        "grade": "DISPUTED",
+        "src": [
+          "usgs_lhp",
+          "clash",
+          "icimod",
+          "ndrrma"
+        ]
+      }
+    ],
+    "Rasuwagadhi": [
+      {
+        "text": "Flood at the border between 08:40 and 09:05 depending on the source; Rasuwagadhi barrage overtopped",
+        "grade": "DISPUTED",
+        "src": [
+          "ndrrma",
+          "icimod"
+        ]
+      }
+    ],
+    "Syabrubesi": [
+      {
+        "text": "A river station stopped at 08:50; NDRRMA and the RDNA name Syabrubesi, ICIMOD names Rasuwagadhi. No level was published",
+        "grade": "DISPUTED",
+        "src": [
+          "ndrrma",
+          "rdna",
+          "icimod"
+        ]
+      },
+      {
+        "text": "Copernicus damage mapping around Syabrubesi: over 240 buildings counted as destroyed, a further 32 as damaged",
+        "grade": "LIKELY",
+        "src": [
+          "icimod"
+        ]
+      },
+      {
+        "text": "Peak discharge above Betrawati is unknown: no gauge survived the peak. The model starts here",
+        "grade": "SOLID",
+        "src": [
+          "icimod"
+        ]
+      }
+    ],
+    "Betrawati": [
+      {
+        "text": "Transmission stopped at 09:20 with a last gauge reading of 3.55 m (a gauge height, not a rise), below warning (4.1 m) and danger (5.0 m)",
+        "grade": "SOLID",
+        "src": [
+          "ndrrma"
+        ]
+      }
+    ],
+    "Galchhi gauge": [
+      {
+        "text": "Flood arrived at 10:28; peak about 10:50, +8.5 m (CLaSH) or about 8.9 m maximum stage (ICIMOD)",
+        "grade": "LIKELY",
+        "src": [
+          "ndrrma",
+          "clash",
+          "icimod"
+        ]
+      },
+      {
+        "text": "ICIMOD's preliminary peak is about 17,000 m3/s: the flow area of a DSM cross-section times a velocity taken from the front's travel time. ICIMOD notes the front may move faster than the water, the section is unverified and the rating is extrapolated",
+        "grade": "LIKELY",
+        "src": [
+          "icimod"
+        ]
+      }
+    ],
+    "Malekhu": [
+      {
+        "text": "Phurke station: above warning at 11:26, above danger at 11:43, then lost with its bridge; Malekhu Bazaar reached about 11:50",
+        "grade": "SOLID",
+        "src": [
+          "ndrrma",
+          "clash"
+        ]
+      }
+    ],
+    "Mugling": [
+      {
+        "text": "The flood had passed Mugling by 13:00 (timeline entry, no gauge level)",
+        "grade": "LIKELY",
+        "src": [
+          "rdna",
+          "icimod"
+        ]
+      }
+    ],
+    "Devghat": [
+      {
+        "text": "Peak gauge reading 6.57 m at 16:00 (a gauge height, not a rise), about 5,850 m3/s; 57.4 million m3 passed between 14:10 and 18:00, 20.0 million m3 of it above the normal flow",
+        "grade": "SOLID",
+        "src": [
+          "ndrrma",
+          "rdna"
+        ]
+      },
+      {
+        "text": "Rise at the peak: +2.12 m above the level before the flood",
+        "grade": "LIKELY",
+        "src": [
+          "clash",
+          "icimod"
+        ]
+      }
+    ]
+  },
+  "toll": {
+    "text": "By 3 October: 1,455 recoveries of bodies and remains, 5,285 people missing (NDRRMA notes this may include unidentified bodies, rescued people and duplicates), 13,795 rescued",
+    "grade": "SOLID",
+    "src": [
+      "ndrrma"
+    ]
+  },
+  "reported_reach": [
+    {
+      "what": "Buildings",
+      "value": "7,570 affected private buildings in five districts (Rasuwa 1,779; Nuwakot 3,977; Dhading 1,451; Gorkha 263; Chitwan 100)",
+      "grade": "SOLID",
+      "src": [
+        "rdna"
+      ]
+    },
+    {
+      "what": "Buildings",
+      "value": "4,685 buildings in the satellite damage mapping of 5 Sep",
+      "grade": "LIKELY",
+      "src": [
+        "ems"
+      ]
+    },
+    {
+      "what": "Bridges",
+      "value": "37 motorable bridges (33 washed out, 4 partly damaged) and 68 trail bridge spans",
+      "grade": "SOLID",
+      "src": [
+        "rdna"
+      ]
+    },
+    {
+      "what": "Hydropower",
+      "value": "13 projects, 759 MW (7 in operation, 6 under construction)",
+      "grade": "SOLID",
+      "src": [
+        "rdna"
+      ]
+    },
+    {
+      "what": "Footprint",
+      "value": "Mapped affected land in the assessed wards: Rasuwa 1,926 ha, Nuwakot 1,100 ha",
+      "grade": "LIKELY",
+      "src": [
+        "rdna"
+      ]
+    }
+  ],
+  "reported_rise": {
+    "_note": "Reported rise of the water above the level before the flood, for the place card's range bar (the facts with their sources are under places)",
+    "Galchhi gauge": {
+      "m": [
+        8.5,
+        8.9
+      ],
+      "time": "10:50",
+      "grade": "LIKELY"
+    },
+    "Devghat": {
+      "m": [
+        2.12,
+        2.12
+      ],
+      "time": "16:00",
+      "grade": "LIKELY"
+    }
+  }
+}

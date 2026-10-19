@@ -1,0 +1,2 @@
+# ruff settings for the Python scripts (data/, model/, app/serve.py)
+line-length = 140

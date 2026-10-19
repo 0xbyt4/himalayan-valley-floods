@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bhote Koshi – Trishuli flood, 26 August 2026: a reconstruction</title>
+<meta name="description" content="A 3D reconstruction of the 26 Aug 2026 flood in Nepal, from the glacier collapse to Devghat, with sources and uncertainty. Not a warning system.">
+<meta name="theme-color" content="#0d1013">
+<!-- link preview (X, chat apps): absolute URLs; SITE must match the published address -->
+<link rel="canonical" href="https://himalayan-valley-floods.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Himalayan Valley Floods">
+<meta property="og:url" content="https://himalayan-valley-floods.pages.dev/">
+<meta property="og:title" content="The Bhote Koshi – Trishuli flood, 26 August 2026">
+<meta property="og:description" content="193 km of river, minute by minute: a flood model checked against reported times and levels, with every source graded. A reconstruction, not a warning system.">
+<meta property="og:image" content="https://himalayan-valley-floods.pages.dev/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Bhote Koshi – Trishuli valley in Nepal in 3D, with the modelled flood water in the river at 10:44 on 26 August 2026. Not a warning system.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Bhote Koshi – Trishuli flood, 26 August 2026">
+<meta name="twitter:description" content="A 3D reconstruction from open data, with sources and uncertainty. Not a warning system.">
+<meta name="twitter:image" content="https://himalayan-valley-floods.pages.dev/og.jpg">
+<meta name="twitter:image:alt" content="The Bhote Koshi – Trishuli valley in 3D with the modelled flood water. Not a warning system.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+               "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="sky"></div>
+<div id="labels"></div>
+
+<!-- top bar: the story title with the always-visible notice; layers and about on the right -->
+<header id="top" class="ui">
+  <div id="title">
+    <h1>Bhote Koshi &ndash; Trishuli flood</h1>
+    <div class="sub"><span class="only-desk">26 August 2026 &middot; Nepal &middot; 193 km of river, true scale</span><span class="only-phone">26 Aug 2026</span><span class="badge">Not a warning system</span></div>
+  </div>
+  <div id="actions">
+    <button type="button" class="tbtn" id="openSettings" aria-label="Layers and view" aria-expanded="false"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg><span>Layers</span></button>
+    <button type="button" class="tbtn" id="share" aria-label="Copy a link to this view"><svg class="ic" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span>Share</span></button>
+    <button type="button" class="tbtn" id="openInfo" aria-label="About, sources and method" aria-expanded="false"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>About</span></button>
+  </div>
+</header>
+
+<!-- river index: the places in river order; the line fills with water down to the flood front -->
+<nav id="chapters" class="panel ui" aria-label="Places along the river">
+  <div class="cap">Places &middot; km from the collapse</div>
+  <div class="frontcap" id="frontcap"><i></i><span>flood front</span></div>
+  <ol id="chapList"></ol>
+</nav>
+
+<!-- map controls -->
+<div id="mapctl" class="ui">
+  <button type="button" class="ibtn" id="home" title="Whole river" aria-label="Back to the whole river"><svg class="ic" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/></svg></button>
+  <button type="button" class="ibtn" id="compass" title="North up" aria-label="Turn the map to north up"><svg class="ic" viewBox="-12 -12 24 24"><g id="needle"><path d="M0-9l3.5 9h-7Z" fill="#d9894a" stroke="none"/><path d="M0 9l3.5-9h-7Z" fill="#a9ada4" stroke="none"/></g></svg></button>
+  <button type="button" class="ibtn only-desk" id="hideUi" title="Hide panels (H)" aria-label="Hide or show the panels" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></svg></button>
+</div>
+
+<!-- the short legend: only what is on the map now -->
+<div id="legendMini" class="panel ui"></div>
+
+<!-- desktop: #sheet lets its children place themselves; phone: one bottom sheet -->
+<div id="sheet" class="ui">
+  <div id="handle" class="only-phone" aria-hidden="true"></div>
+  <div id="dock" class="panel">
+    <button type="button" id="play" aria-label="Play"><svg class="ic" viewBox="0 0 24 24"><path id="playIcon" d="M7 4.5v15l13-7.5z"/></svg></button>
+    <div id="clock"><div class="t num" id="tnow">08:30</div><div class="d">Nepal time, 26 Aug</div></div>
+    <div id="track"><input id="slider" type="range" min="-14" max="600" step="0.25" value="-14" aria-label="Time"></div>
+    <div class="right">
+      <div class="seg" role="group" aria-label="Speed"><button type="button" data-speed="60" class="on" aria-pressed="true" title="1 model minute per second">1 min/s</button><button type="button" data-speed="300" aria-pressed="false" title="5 model minutes per second">5 min/s</button></div>
+      <button type="button" class="tbtn" id="followBtn" aria-pressed="false" title="The camera follows the flood front"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg><span class="only-desk">Follow</span></button>
+      <button type="button" class="tbtn only-desk" id="openCharts" aria-expanded="false"><svg class="ic" viewBox="0 0 24 24"><path d="M3 19h18"/><path d="M4 16c3-1 4-8 7-8s4 5 6 5 3-3 4-4"/></svg><span>Charts</span></button>
+    </div>
+  </div>
+  <div id="stepper" class="only-phone">
+    <button type="button" class="ibtn" id="prevPlace" aria-label="Previous place"><svg class="ic" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+    <button type="button" class="nm" id="stepName"><b>Whole river</b><span>tap for details</span></button>
+    <span class="v num" id="stepValue"></span>
+    <button type="button" class="ibtn" id="nextPlace" aria-label="Next place"><svg class="ic" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+  </div>
+  <aside id="place" class="panel" hidden aria-live="polite"></aside>
+  <footer id="foot">
+    <span id="disclaimer"><b>Not a warning system.</b> <span class="long">A reconstruction of a past event from public data; the water is a model, shown with its uncertainty.</span><span class="short">A reconstruction of a past event; the water is a model.</span></span>
+    <span class="credit">Terrain: Copernicus WorldDEM-30 &middot; imagery: Copernicus Sentinel-2 &middot; &copy; OpenStreetMap contributors &middot; <a href="#" id="openHowSure">How sure is this?</a> &middot; <a href="#" id="openSources">Sources and method</a></span>
+  </footer>
+</div>
+
+<!-- settings: everything that changes how the map looks -->
+<aside id="settings" class="panel ui" hidden aria-label="Layers and view">
+  <div class="hd"><h2>Layers and view</h2><button type="button" class="ibtn sm" data-close-panel="settings" aria-label="Close"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <fieldset><legend class="cap">Water</legend>
+    <div class="field" id="modelRow"><span class="l">Water shown as</span>
+      <div class="seg full" role="group" aria-label="Water model"><button type="button" data-model="2d" class="on" aria-pressed="true">Where it spread</button><button type="button" data-model="1d" aria-pressed="false">River level with range</button></div>
+      <div class="hint">Where it spread: a 2-D model of the water on the terrain, one run at a time. River level: a 1-D model along the river, the middle and the range of 411 runs.</div></div>
+    <div class="field" id="runField"><span class="l">Spread map run</span>
+      <div class="seg full" role="group" aria-label="2-D model run" id="runRow"></div>
+      <div class="hint" id="runHint"></div></div>
+    <div class="field" id="bandField" hidden><span class="l">River level</span>
+      <div class="seg full" role="group" aria-label="River level" id="bandLinks"><button type="button" data-band="p50" class="on" aria-pressed="true">Most likely</button><button type="button" data-band="p95" aria-pressed="false">With the high end</button></div></div>
+    <button type="button" class="tg" data-trace="1" role="switch" aria-checked="true"><span class="n">Show where the water has been</span><span class="sw"></span><span class="lg"><span class="dot" style="background:#a88f6b;opacity:.75"></span>a thin layer of mud where the water rose and fell again</span></button>
+  </fieldset>
+  <fieldset><legend class="cap">Map</legend>
+    <div class="field" id="texField"><span class="l">Satellite image</span>
+      <div class="seg full" role="group" aria-label="Satellite image"><button type="button" data-tex="before" class="on" aria-pressed="true">Before</button><button type="button" data-tex="after" aria-pressed="false">After</button></div>
+      <div class="hint" id="texHint">Copernicus Sentinel-2, clouds masked.</div></div>
+    <button type="button" class="tg" data-layer="river" role="switch" aria-checked="true"><span class="n">Arrival time on the river</span><span class="sw"></span><span class="lg" data-legend="river"></span></button>
+    <button type="button" class="tg" data-layer="events" role="switch" aria-checked="true"><span class="n">Reported events</span><span class="sw"></span><span class="lg" data-legend="events"></span></button>
+    <button type="button" class="tg" data-layer="infra" role="switch" aria-checked="false"><span class="n">Buildings and bridges</span><span class="sw"></span><span class="lg" data-legend="infra"></span></button>
+    <button type="button" class="tg" data-layer="change" role="switch" aria-checked="false"><span class="n">Vegetation lost (satellite)</span><span class="sw"></span><span class="lg" data-legend="change"></span></button>
+  </fieldset>
+  <div class="keys"><kbd>Space</kbd> play &nbsp; <kbd>Shift</kbd>+<kbd>&larr;</kbd><kbd>&rarr;</kbd> place &nbsp; <kbd>L</kbd> layers &nbsp; <kbd>H</kbd> hide panels &nbsp; <kbd>Esc</kbd> close</div>
+</aside>
+
+<!-- charts: one sheet, one view at a time -->
+<section id="charts" class="panel ui" hidden aria-label="Charts">
+  <div class="hd"><div class="tabs" role="tablist"><button type="button" role="tab" aria-selected="true" data-tab="profile">Along the river</button><button type="button" role="tab" aria-selected="false" data-tab="xsec">Across the valley</button><button type="button" role="tab" aria-selected="false" data-tab="reach">What the water reached</button></div>
+    <button type="button" class="ibtn sm" data-close-panel="charts" aria-label="Close"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="body">
+    <section id="profile" hidden>
+      <p class="capt">Water level along the river at <b class="tnow2 num">08:30</b>, above the usual level. Line: most likely (river-level model). Dark band: likely range. Pale band: the highest at any time. Yellow: reported peaks. The model starts at Syabrubesi (km 35.7).</p>
+      <svg id="profileSvg" viewBox="0 0 1000 260" role="img" aria-label="Water level along the river"></svg>
+    </section>
+    <section id="xsec" hidden>
+      <p class="capt"><span id="xsecWhere"></span> Across the valley at <b class="tnow2 num">08:30</b>. Brown: water now (most likely). Dashed: likely range. Dotted: highest so far. Ground from the surface model; you look downstream.
+        <label class="km">km <input id="xsecKm" type="range" min="36" max="192.5" step="0.5" value="97" aria-label="Distance along the river, km"></label></p>
+      <svg id="xsecSvg" viewBox="0 0 1000 240" role="img" aria-label="Cross-section of the valley"></svg>
+    </section>
+    <section id="reach" hidden><div id="reachBody"></div></section>
+  </div>
+</section>
+
+<!-- about: what happened, how to read the map, sources and method -->
+<aside id="info" class="panel ui" hidden aria-label="About, sources and method">
+  <div class="hd"><h2>About this map</h2><button type="button" class="ibtn sm" data-close-panel="info" aria-label="Close"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="body">
+    <div id="aboutBody"></div>
+    <section id="sources"><div id="sourcesBody"></div></section>
+  </div>
+</aside>
+
+<!-- the guided tour: one step at a time, each with its time, place and layers -->
+<section id="tour" class="panel ui" hidden aria-live="polite" aria-label="Guided tour">
+  <div class="cap" id="tourStep"></div>
+  <h3 id="tourTitle"></h3>
+  <p id="tourText"></p>
+  <div class="row"><button type="button" class="ghost sm" id="tourBack">Back</button><button type="button" class="primary sm" id="tourNext">Next</button><button type="button" class="link" id="tourExit">Exit the tour</button></div>
+</section>
+<div id="toast" role="status" hidden></div>
+
+<!-- first visit -->
+<div id="scrim" hidden></div>
+<section id="intro" hidden role="dialog" aria-modal="true" aria-label="Introduction">
+  <div class="cap k">26 August 2026 &middot; Rasuwa to Chitwan, Nepal</div>
+  <h1>The Bhote Koshi &ndash; Trishuli flood</h1>
+  <p>At 08:37 rock and ice broke away above the Lhende Glacier. The flood ran 193 km down the Bhote Koshi and Trishuli rivers and reached Devghat in the afternoon.</p>
+  <p class="toll" id="introToll"></p>
+  <div class="note"><span aria-hidden="true">&#9432;</span><span><b>Not a warning system.</b> This page rebuilds that day from public reports and a flood model. The water is shown with its uncertainty.</span></div>
+  <div class="cta">
+    <button type="button" class="primary" id="introTour"><svg class="ic" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg>Take the tour &middot; 8 steps</button>
+    <button type="button" class="ghost" id="introFollow">Follow the flood &middot; 2 min</button>
+    <button type="button" class="ghost" id="introExplore">Explore the map</button>
+  </div>
+  <div class="how"><span class="d">Drag to turn &middot; scroll to zoom &middot; click a place for details<br></span>Terrain: Copernicus WorldDEM-30 &middot; imagery: Copernicus Sentinel-2 &middot; &copy; OpenStreetMap contributors</div>
+</section>
+
+<div id="loading" role="status">Loading terrain&hellip;</div>
+<script type="module" src="src/main.mjs?v=4"></script>
+</body>
+</html>

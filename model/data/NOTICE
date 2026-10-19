@@ -1,0 +1,5 @@
+The hydraulic tables in this folder are derived from the Copernicus DEM and are not covered by the MIT licence of
+the code: produced using Copernicus WorldDEM-30 (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH
+2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. The organisations in charge
+of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus
+WorldDEM-30. See app/data/NOTICE for the other data.

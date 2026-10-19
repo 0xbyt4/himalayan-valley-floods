@@ -1,0 +1,222 @@
+{
+ "event": "budhi_gandaki",
+ "note": "Pond behind the Ungdilung - Syar confluence blockage, from the pre-event Copernicus DEM (a surface model). Only the pond length (~1.5 km, NDRRMA field observation) is observed; heights and volumes are derived here and are order-of-magnitude estimates.",
+ "confluence": {
+  "chainage_km": 8.5,
+  "bed_m": 2005.8,
+  "lat_lon_rc": [
+   442,
+   844
+  ]
+ },
+ "observed_length_km": [
+  1.0,
+  2.0
+ ],
+ "table": [
+  {
+   "h_m": 5.0,
+   "area_km2": 0.0,
+   "volume_Mm3": 0.0,
+   "length_km": 0.0,
+   "leak": false
+  },
+  {
+   "h_m": 10.0,
+   "area_km2": 0.0153,
+   "volume_Mm3": 0.078,
+   "length_km": 0.4,
+   "leak": false
+  },
+  {
+   "h_m": 15.0,
+   "area_km2": 0.0225,
+   "volume_Mm3": 0.174,
+   "length_km": 0.42,
+   "leak": false
+  },
+  {
+   "h_m": 20.0,
+   "area_km2": 0.027,
+   "volume_Mm3": 0.302,
+   "length_km": 0.46,
+   "leak": false
+  },
+  {
+   "h_m": 25.0,
+   "area_km2": 0.0324,
+   "volume_Mm3": 0.448,
+   "length_km": 0.53,
+   "leak": false
+  },
+  {
+   "h_m": 30.0,
+   "area_km2": 0.0405,
+   "volume_Mm3": 0.628,
+   "length_km": 0.61,
+   "leak": false
+  },
+  {
+   "h_m": 35.0,
+   "area_km2": 0.0549,
+   "volume_Mm3": 0.866,
+   "length_km": 0.67,
+   "leak": false
+  },
+  {
+   "h_m": 40.0,
+   "area_km2": 0.0612,
+   "volume_Mm3": 1.156,
+   "length_km": 0.68,
+   "leak": false
+  },
+  {
+   "h_m": 45.0,
+   "area_km2": 0.0693,
+   "volume_Mm3": 1.49,
+   "length_km": 0.71,
+   "leak": false
+  },
+  {
+   "h_m": 50.0,
+   "area_km2": 0.0819,
+   "volume_Mm3": 1.868,
+   "length_km": 0.87,
+   "leak": false
+  },
+  {
+   "h_m": 55.0,
+   "area_km2": 0.0936,
+   "volume_Mm3": 2.298,
+   "length_km": 0.9,
+   "leak": false
+  },
+  {
+   "h_m": 60.0,
+   "area_km2": 0.1098,
+   "volume_Mm3": 2.814,
+   "length_km": 0.9,
+   "leak": false
+  },
+  {
+   "h_m": 65.0,
+   "area_km2": 0.1188,
+   "volume_Mm3": 3.386,
+   "length_km": 0.96,
+   "leak": false
+  },
+  {
+   "h_m": 70.0,
+   "area_km2": 0.1287,
+   "volume_Mm3": 4.005,
+   "length_km": 1.02,
+   "leak": false
+  },
+  {
+   "h_m": 75.0,
+   "area_km2": 0.1521,
+   "volume_Mm3": 4.725,
+   "length_km": 1.23,
+   "leak": false
+  },
+  {
+   "h_m": 80.0,
+   "area_km2": 0.171,
+   "volume_Mm3": 5.53,
+   "length_km": 1.3,
+   "leak": false
+  },
+  {
+   "h_m": 85.0,
+   "area_km2": 0.2034,
+   "volume_Mm3": 6.573,
+   "length_km": 1.6,
+   "leak": false
+  },
+  {
+   "h_m": 90.0,
+   "area_km2": 0.2313,
+   "volume_Mm3": 7.658,
+   "length_km": 1.68,
+   "leak": false
+  },
+  {
+   "h_m": 95.0,
+   "area_km2": 0.2547,
+   "volume_Mm3": 8.868,
+   "length_km": 1.69,
+   "leak": false
+  },
+  {
+   "h_m": 100.0,
+   "area_km2": 0.2727,
+   "volume_Mm3": 10.181,
+   "length_km": 1.72,
+   "leak": false
+  },
+  {
+   "h_m": 105.0,
+   "area_km2": 0.2898,
+   "volume_Mm3": 11.591,
+   "length_km": 1.72,
+   "leak": false
+  },
+  {
+   "h_m": 110.0,
+   "area_km2": 0.3078,
+   "volume_Mm3": 13.086,
+   "length_km": 1.74,
+   "leak": false
+  },
+  {
+   "h_m": 115.0,
+   "area_km2": 0.3186,
+   "volume_Mm3": 14.651,
+   "length_km": 1.75,
+   "leak": false
+  },
+  {
+   "h_m": 120.0,
+   "area_km2": 0.3366,
+   "volume_Mm3": 16.289,
+   "length_km": 1.75,
+   "leak": false
+  }
+ ],
+ "inflow_limited": {
+  "inflow_m3s": [
+   10.0,
+   100.0
+  ],
+  "blockage_h": [
+   1.0,
+   2.2
+  ],
+  "volume_max_Mm3": [
+   0.036,
+   0.792
+  ],
+  "h_m": [
+   7.3,
+   33.4
+  ],
+  "length_km": [
+   0.18,
+   0.65
+  ],
+  "inflow_needed_for_1_5_km_m3s": [
+   786,
+   1729
+  ]
+ },
+ "length_consistent": {
+  "h_m": [
+   70.0,
+   120.0
+  ],
+  "volume_Mm3": [
+   4.005,
+   16.289
+  ]
+ }
+}
