@@ -1,4 +1,4 @@
-# Cache rules for Cloudflare Pages (https://developers.cloudflare.com/pages/configuration/headers/).
+# Cache rules for the site on Cloudflare (static assets; the same _headers format as Cloudflare Pages).
 # Pages, scripts and styles are checked with the server on every visit, so a new version shows at once.
 # Data files carry the data version in their URL (?v=DATA_V in src/decode.mjs), so they can be kept for a year:
 # a new version has a new URL.

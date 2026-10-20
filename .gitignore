@@ -9,3 +9,6 @@ __pycache__/
 out/
 
 # The built app data (terrain, imagery, 2-D flood frames) is committed, so the app runs from a clone.
+
+# Cloudflare wrangler cache
+.wrangler/

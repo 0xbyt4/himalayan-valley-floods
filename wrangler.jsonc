@@ -1,0 +1,10 @@
+// Cloudflare deployment of the app as static assets (no server code). Deploy from the project root:
+//   npx wrangler deploy
+{
+  "name": "himalayan-valley-floods",
+  "compatibility_date": "2026-10-19",
+  "assets": {
+    "directory": "./app",
+    "not_found_handling": "404-page"
+  }
+}

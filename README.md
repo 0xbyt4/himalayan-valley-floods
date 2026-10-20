@@ -3,6 +3,8 @@
 A scientific reconstruction of the 26 August 2026 flood on the Bhote Koshi and Trishuli rivers in Nepal. It is an
 interactive 3D browser app built from open data and published reports.
 
+**Open the app: https://himalayan-valley-floods.0xbyt4.workers.dev/**
+
 ![The 2-D model at Galchhi, 10:48](docs/flood2d-galchhi.jpg)
 
 **This is not a warning system and not an official hazard map.** It reconstructs a past event. The water in it is
@@ -39,6 +41,17 @@ python3 app/serve.py
 
 Then open http://127.0.0.1:8777/. The server marks every file "no-cache", so the browser always gets the latest
 build. three.js loads from the jsDelivr CDN.
+
+## Publish
+
+The site runs on Cloudflare as static assets, set in `wrangler.jsonc`. From the project root, after
+`npx wrangler login`:
+
+```bash
+npx wrangler deploy
+```
+
+The files listed in `app/.assetsignore` (the local server) are not uploaded.
 
 ## Rebuild the data
 
