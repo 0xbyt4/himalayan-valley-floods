@@ -303,7 +303,7 @@ body.charts-open #place .hero b { font-size: 26px; }
 body.noui #chapters, body.noui #place, body.noui #legendMini, body.noui #settings, body.noui #charts, body.noui #info,
 body.noui #actions, body.noui #mapctl > :not(#hideUi), body.noui #labels .lab:not(.front):not(.upfront) { display: none !important; }
 
-/* ---------- capture mode (video/capture.py): panels and labels at opacity --ui; captions drawn by the tool ---------- */
+/* ---------- capture mode (?capture=1, driven by an external frame-capture tool): panels and labels at opacity --ui; captions drawn by the tool ---------- */
 body.capture .ui, body.capture #labels, body.capture #sheet > * { opacity: var(--ui, 0); }
 body.capture #sheet { opacity: 1; }
 body.capture #scrim, body.capture #intro, body.capture #mapctl { display: none !important; }

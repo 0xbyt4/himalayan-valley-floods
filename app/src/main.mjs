@@ -814,7 +814,7 @@ function setState(s) {
 const TOUR = [
   { title: 'The valley', text: 'This is the valley on the morning of 26 August 2026: 193 km of river, from the collapse source near the Nepal–China border to Devghat. The land is to scale.', s: { minute: -14, place: null, layers: ['river', 'events'], tex: 'before' } },
   { title: '08:37 · the collapse', text: 'A mass of rock and ice broke away above the Lhende Glacier. Seismometers recorded it at 08:37:10.', s: { minute: -7, place: 'Collapse source (CLaSH)', layers: ['events'], tex: 'before' } },
-  { title: 'The first 36 km', text: 'Here the flood was ice, rock and water, too wild for a water model. The orange stretch shows where reports place the front; the reports disagree.', s: { minute: 6, place: 'Syabrubesi', layers: ['river', 'events'], tex: 'before' } },
+  { title: 'The first 36 km', text: 'Here the flood was a debris flow of ice, rock and water, which a water-only model cannot represent. The orange stretch shows where reports place the front; the reports disagree.', s: { minute: 6, place: 'Syabrubesi', layers: ['river', 'events'], tex: 'before' } },
   { title: 'Down the valley', text: "From Syabrubesi the model carries the water. Betrawati's gauge stopped sending at 09:20; the flood reached Galchhi near 10:28.", s: { minute: 36, layers: ['river'], tex: 'before', follow: true, speed: 300, play: true }, until: 104 },
   { title: '10:50 · Galchhi', text: 'At the Galchhi gauge the water rose by about 8.5 m (CLaSH) to 8.9 m (ICIMOD) near 10:50. The middle spread-map run gives +7.4 m at 10:42.', s: { minute: 126, place: 'Galchhi gauge', layers: ['river'], tex: 'before', follow: false } },
   { title: 'What the water reached', text: 'Coloured dots are buildings the modelled water reaches: 359 in the river-level model\'s most likely case. Reports count 7,570 affected private buildings in five districts. The model carries water only, starts at Syabrubesi and its levels run low, so it reaches far fewer.', s: { minute: 140, place: 'Trishuli Bazaar', layers: ['infra'], tex: 'before', follow: false } },
@@ -895,7 +895,7 @@ renderer.domElement.setAttribute('aria-label', 'A 3D map of the Bhote Koshi and 
 // ?debug: the camera, its controls and the follow path on window.debug, for measuring camera moves from the console
 if (qs.has('debug')) window.debug = { camera, controls, followView };
 
-// capture mode (?capture=1): video/capture.py sets the time, camera, imagery and layers frame by frame and waits
+// capture mode (?capture=1): an external frame-capture tool (not part of this app) sets the time, camera, imagery and layers frame by frame and waits
 // until every tile for the view is shown. Panels and map labels are hidden; the tool draws its own captions.
 const capturing = qs.has('capture');
 if (capturing) {

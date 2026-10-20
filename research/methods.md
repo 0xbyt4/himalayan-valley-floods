@@ -255,7 +255,7 @@ lognormal k for Himalayan moraine lakes. That approach is a good template for ou
 
 ### 3.3 Worked example (for tests, not for a real site)
 
-H_d = 30 m, V_l = 5 x 10^6 m3, full breach (h_w = 30 m). Computed in this session with the equations above.
+H_d = 30 m, V_l = 5 x 10^6 m3, full breach (h_w = 30 m). Computed here with the equations above.
 
 | Relation | Q_p (m3/s) |
 |----------|-----------:|
@@ -361,7 +361,7 @@ Jarrett (1984) [28], 75 measurements on 21 high-gradient streams in Colorado (se
   secondary).
 - Outburst floods have depths of 5 to 20 m, far above the calibrated R range. Values are extrapolated.
 
-Values from the Jarrett equation (computed in this session):
+Values from the Jarrett equation (computed here):
 
 | S | R (m) | n |
 |---|------:|----:|
@@ -409,7 +409,7 @@ Errors and how to handle them:
 
 ### 4.5 Celerity and arrival time over tens of km
 
-Example celerities from the wide-channel formula (computed in this session):
+Example celerities from the wide-channel formula (computed here):
 
 | n | h (m) | S | v (m/s) | c = 5/3 v (m/s) |
 |---|------:|---|--------:|----------------:|
@@ -906,7 +906,7 @@ Open items before implementation:
 39. van der Bles, A.M., van der Linden, S., Freeman, A.L.J., et al. (2019). Communicating uncertainty about facts,
     numbers and science. Royal Society Open Science 6, 181870. doi:10.1098/rsos.181870. Seen: abstract.
 40. Mastrandrea, M.D., et al. (2010). Guidance note for lead authors of the IPCC Fifth Assessment Report on consistent
-    treatment of uncertainties. IPCC. No DOI. Seen: not re-read in this session (standard reference; verify wording).
+    treatment of uncertainties. IPCC. No DOI. Seen: not re-read for this file (standard reference; verify wording).
 41. Costa, J.E. (1985). Floods from dam failures. USGS Open-File Report 85-560. doi:10.3133/ofr85560. Seen: equations
     via [18] and [23].
 42. ICIMOD (2026). Kyirong-Rasuwa flood 2026 (Nepal-China border). https://www.icimod.org/kyirong-rasuwa-flood-2026-nepal-china-border/
@@ -915,9 +915,9 @@ Open items before implementation:
     Bhotekoshi-Trishuli flood, as reported by Onlinekhabar (27 Aug 2026,
     https://english.onlinekhabar.com/technical-report-rasuwa-flood.html) and Ratopati
     (https://english.ratopati.com/story/76572/). Original report not seen.
-44. NDRRMA (2026). Rasuwa flood situation report (Devghat peak about 5,850 m3/s, per search summary).
-    https://ndrrma.gov.np/mediafiles/rasuwa/Rasuwa_Flood_SitRep_Temp_ENG_01_01092026.pdf. Text not readable in this
-    session; verify.
+44. NDRRMA (2026). Rasuwa flood situation report (Devghat peak about 5,850 m3/s, as cited in search results; the same value is in the FFD report, see events.md).
+    https://ndrrma.gov.np/mediafiles/rasuwa/Rasuwa_Flood_SitRep_Temp_ENG_01_01092026.pdf. Text could not be read
+    (2026-10-17); verify.
 45. USGS (2022). USGS offers emergency managers a new tool to assess lahar hazards at Mount Rainier (news, 29 Apr
     2022; report OFR 2021-1118 by George, Iverson, Cannon).
     https://www.usgs.gov/news/featured-story/usgs-offers-emergency-managers-a-new-tool-assess-lahar-hazards-mount-rainier

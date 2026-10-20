@@ -22,8 +22,9 @@ app and this repository use calm, factual language.
 - A river profile, a cross-section, a compass and a timeline.
 - A guided tour of eight steps, and a "How sure is this?" section with each model run checked against the reports.
 - Links to a moment: the address follows the view (time, place, follow camera, layers, imagery, model run), so a
-  copied link opens the same moment. The free camera position is not kept. Parameters: `t` (minutes after 08:44), `place`, `cam=follow`, `layers` (a list or
-  `none`), `tex=after`, `model=1d`, `scenario2d`, `tour` (step 1 to 8).
+  copied link opens the same moment. The free camera position is not kept. Parameters: `t` (minutes after 08:44),
+  `place`, `cam=follow`, `layers` (a list or `none`), `tex=after`, `model=1d`, `scenario2d` (`low`, `central` or
+  `high`), `tour` (step 1 to 8).
 
 ![The app at Galchhi](docs/app-galchhi.jpg)
 
@@ -120,6 +121,8 @@ Every script states its inputs, outputs and usage at the top of the file.
 ```bash
 node --test model/*.test.mjs
 ```
+
+The Python tests need the environment from step 1 of "Rebuild the data":
 
 ```bash
 .venv/bin/python -m pytest model/test_swe2d.py data/test_build_layers.py

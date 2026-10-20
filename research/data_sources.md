@@ -204,7 +204,7 @@ way.
 - **Caveat on cloud numbers:** `eo:cloud_cover` is for the whole 110 km tile, not the valley. Valleys can be clear
   while ridges are cloudy, and the reverse. ESA published a Betrawati to Gerkhu pair from 12 August and 27
   August, and 27 August has 54 to 78 % tile cloud. The candidates below must be checked visually (thumbnail or a
-  small window read) before we commit to them. I did not do that here because the task forbids image downloads.
+  small window read) before we commit to them. This was not done in this pass, which made no image downloads (2026-10-17).
   Snow cover in October tiles (20 to 50 %) is mostly high peaks, not valley floors.
 
 #### Budhi Gandaki (event 11 October 2026; landslide reported about 04:22 NPT, see `events.md`)
